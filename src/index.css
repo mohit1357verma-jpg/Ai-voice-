@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --accent: #8b5cf6;
+  }
+  
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Easy Voice AI — refined product UI */
+:root {
+  color-scheme: light;
+  --ev-ink: #172554;
+  --ev-primary: #4f46e5;
+  --ev-line: #e4e8f2;
+}
+body {
+  background: #f5f7fc;
+  background-image: radial-gradient(ellipse at 12% 0%, rgba(99,102,241,.10), transparent 34%),
+                    radial-gradient(ellipse at 92% 12%, rgba(14,165,233,.08), transparent 30%);
+}
+.app-shell { background: transparent; }
+.app-header { background: rgba(255,255,255,.88); border-color: rgba(203,213,225,.72); box-shadow: 0 5px 24px rgba(30,41,59,.045); }
+.app-main { padding-top: 1.6rem; }
+.hero-panel {
+  position: relative; isolation: isolate; overflow: hidden;
+  border: 1px solid rgba(199,210,254,.8); border-radius: 28px;
+  background: linear-gradient(125deg, #eef2ff 0%, #f8faff 48%, #eff6ff 100%);
+  box-shadow: 0 14px 38px rgba(79,70,229,.075);
+}
+.hero-panel::before, .hero-panel::after { content:""; position:absolute; z-index:-1; border-radius:999px; filter:blur(1px); }
+.hero-panel::before { width:190px; height:190px; right:-65px; top:-105px; background:rgba(129,140,248,.16); }
+.hero-panel::after { width:140px; height:140px; left:-75px; bottom:-95px; background:rgba(56,189,248,.12); }
+.hero-panel h2 { color:#172554; letter-spacing:-.035em; line-height:1.2; }
+.hero-panel p { max-width: 38rem; margin-left:auto; margin-right:auto; }
+.app-main > section {
+  border-color: rgba(226,232,240,.95);
+  border-radius: 24px;
+  box-shadow: 0 8px 28px rgba(15,23,42,.045);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.app-main > section:hover { box-shadow: 0 12px 34px rgba(15,23,42,.065); }
+.app-main textarea { font-size: 16px; line-height: 1.8; }
+.app-main textarea::placeholder { color:#94a3b8; }
+.app-main section button { -webkit-tap-highlight-color: transparent; }
+.app-main section button:focus-visible, .app-header button:focus-visible, .app-main textarea:focus-visible, .app-main select:focus-visible {
+  outline: 3px solid rgba(99,102,241,.28); outline-offset: 2px;
+}
+/* Voice tiles */
+.app-main section > .grid > div { min-height: 150px; }
+.app-main section > .grid > div[ class*="cursor-pointer" ] { box-shadow: 0 3px 12px rgba(15,23,42,.025); }
+/* Consistent controls and touch targets */
+.app-main button, .app-header button { transition-duration: .18s; }
+.app-main button:active, .app-header button:active { transform: scale(.985); }
+.app-main select { min-height: 44px; }
+.app-main footer { color:#64748b; }
+@media (max-width: 640px) {
+  .app-main { padding-top: 1rem; }
+  .hero-panel { border-radius: 22px; }
+  .app-main > section { padding: 1.1rem; border-radius: 20px; }
+  .app-main section > .grid > div { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}

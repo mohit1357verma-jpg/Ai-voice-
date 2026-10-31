@@ -1,0 +1,6 @@
+{
+  "name": "Easy Voice AI",
+  "description": "Simple and modern AI Text-to-Speech web app powered by Google Gemini. Convert text to natural speech in Hindi, English, and more with instant playback and WAV download.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
