@@ -1,0 +1,30 @@
+name: Extract Easy Voice AI
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract project ZIP
+        run: |
+          unzip -o easy-voice-ai-premium-ui.zip -d extracted
+          cp -r extracted/easyvoice_src/. .
+          rm -rf extracted
+          rm -f easy-voice-ai-premium-ui.zip
+
+      - name: Save project files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Add Easy Voice AI Premium UI"
+          git push
